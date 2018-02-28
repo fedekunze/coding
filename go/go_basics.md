@@ -21,16 +21,16 @@ feel best to feel comfortable with the syntax.
 Second, you need to set up your go environment.  In go, all code hangs out
 GOPATH.  You don't have a separate root directory for each project. Pick a nice
 locations (like `$HOME/go`) and `export GOPATH` in your startup scripts
-(`.bashrc` or the like). Note that go compiles all programs to `$GOPATH/bin`,
+(`.bashrc`, `.bash_profile`  or the like). Note that go compiles all programs to `$GOPATH/bin`,
 similarly PATH will need to be updated in the startup scripts. If your are
-editing `.bashrc` (typically found in HOME)  you would add the following lines:
+editing `.bashrc` or `.bash_profile` (typically found in $HOME)  you would add the following lines:
 
 ```
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ```
 
-Now, when you run `go get github.com/tendermint/basecoin`, this will create the
+Now, when you run `go get -u github.com/tendermint/basecoin/...`, this will create the
 directory `$GOPATH/src/github.com/tendermint/basecoin`, checkout the master
 branch with git, and try to compile if there are any scripts.  All your repos
 will fit under GOPATH with a similar logic.  Just pick good names for your
